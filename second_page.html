@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos</title>
+    
+    <style>
+        body{
+            font-size: 7px;
+            font-family:Verdana, Helvetica, sans-serif;
+            background-image: linear-gradient(45deg,rgba(255, 0, 212, 0.534),rgb(255, 221, 0));
+        }
+        div.form-container { 
+            background-color: rgba(0, 0, 0, 0.9);
+            position: absolute;
+            left: 18%;
+            transform: translate(-50%, 0%);
+            padding: 20px;
+            border-radius: 15px;
+            color: white;
+            border: 3px solid white;
+        }   
+        button{
+            background-color: dodgerblue;
+            border: none;
+            padding: 8px;
+            width: 100%;
+            border-radius: 10px;
+            color: white;
+            cursor: pointer;
+            font-family: Verdana;
+            font-weight: bold;
+        }
+        button:hover{
+            background-color: deepskyblue;
+        }
+        table {
+            background-color: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 20px;
+            width: 65%; 
+            border-collapse: collapse;
+            margin: 20px auto;
+            position: absolute;
+            top: 0px;
+            right: 20px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 13px;
+
+        }
+        table, th, td {
+            border: 2px solid white;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        .table-container { /* alteração */
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        input { /* SUGESTÃO */
+            width: 95%; /* SUGESTÃO */   
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        }
+        div.watermark {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 12px;
+            color: rgb(0, 0, 0);
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container"> <!-- alteração -->
+        <h1>Bem-vindo(a) à página de produtos!</h1>
+        <form id="productForm">
+            <h1>Código</h1>
+            <input type="text" id="codigo" placeholder="Cadastre aqui..." name="codigo" required>
+            <h1>Marca</h1>
+            <input type="text" id="marca" name="marca" required>
+            <h1>Tipo</h1>
+            <input type="text" id="tipo" name="tipo" required>
+            <h1>Categoria</h1>
+            <input type="text" id="categoria" name="categoria" required>
+            <h1>Preço Unitário</h1>
+            <input type="text" id="preco" name="preco" required>
+            <h1>Custo</h1>
+            <input type="text" id="custo" name="custo" required>
+            <h1>Observações</h1>
+            <input type="text" id="observacoes" name="observacoes" required>
+            <br><br><br>
+            <button type="button" onclick="adicionarProduto()">Enviar</button> <!-- alteração -->
+            <br><br>
+        </form>
+    </div>
+    <div id="tabelaProdutos" class="table-container">
+        <table id="produtosTable"> <!-- alteração -->
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Marca</th>
+                    <th>Tipo</th>
+                    <th>Categoria</th>
+                    <th>Preço Unitário</th>
+                    <th>Custo</th>
+                    <th>Observações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Linhas de produtos serão adicionadas aqui -->
+            </tbody>
+        </table>
+    </div>
+<div class="watermark">
+    make by ultrahand programmer (@João-Victor-BR)
+</div>
+    <script src="script.js"></script>
+</body>
+</html>

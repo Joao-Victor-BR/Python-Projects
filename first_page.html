@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body{
+            font-family:Verdana, Helvetica, sans-serif;
+            background-image: linear-gradient(45deg,rgba(255, 0, 212, 0.534),rgb(255, 221, 0));
+        }
+        .bloco{
+            background-color: rgba(0, 0, 0, 0.9);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            padding: 60px;
+            border-radius: 15px;
+            color: white;
+            border: 5px solid white;
+        }
+        input{
+            padding:14px;
+            border:none;
+            outline: none;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 15px;
+            border-radius: 5px;
+        }
+        button{
+            background-color:dodgerblue;
+            border:none;
+            padding: 15px;
+            width: 100%;
+            border-radius: 10px;
+            color: white;
+            cursor: pointer;
+            font-family: Verdana;
+            font-weight: bold;
+        }
+        button:hover{
+            background-color: deepskyblue;
+        }
+        .watermark {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 12px;
+            color: rgb(0, 0, 0);
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function logar(){
+            location.href = "second_page.html"
+        }
+        document.addEventListener('DOMContentLoaded', (event) => { // alteração
+            const inputs = document.querySelectorAll('input');
+            inputs.forEach((input, index) => {
+                input.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        const nextInput = inputs[index + 1];
+                        if (nextInput) {
+                            nextInput.focus();
+                        } else {
+                            document.querySelector('button').click();
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+    </script>
+    <div class="bloco">
+    <h1>Login</h1>
+   
+        <input type="text" id="usuario" placeholder="Cadastre-se..." name="usuario" required="nome">
+        <br><br>
+        <input type="password" id="senha" name="senha" required="">
+        <br><br>
+        <button type="submit" onclick=logar()> Enviar</button> 
+    </div>
+    <div class="watermark">
+        make by ultrahand programmer (@João-Victor-BR)
+    </div>
+</body>
+</html>
